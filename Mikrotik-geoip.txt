@@ -1,0 +1,13 @@
+# Script to fetch and import GeoIP data for first country
+:log info "Starting GeoIP fetch for <replace with ISOCODE>"
+/tool fetch url="https://mikrotik-geoip.com/free/?version=7&family=ipv4&type=firewall&country=<replace with ISOCODE>" output=file dst-path=MikroTik-GeoIP-<replace with ISOCODE>.rsc
+:delay 10s; # Delay to ensure file download completes
+:log info "Importing GeoIP file for <replace with ISOCODE>"
+/import file-name=MikroTik-GeoIP-<replace with ISOCODE>.rsc
+
+# Script to fetch and import GeoIP data for second country
+:log info "Starting GeoIP fetch for <replace with ISOCODE>"
+/tool fetch url="https://mikrotik-geoip.com/free/?version=7&family=ipv4&type=firewall&country=<replace with ISOCODE>" output=file dst-path=MikroTik-GeoIP-<replace with ISOCODE>.rsc
+:delay 10s; # Delay to ensure file download completes
+:log info "Importing GeoIP file for <replace with ISOCODE>"
+/import file-name=MikroTik-GeoIP-<replace with ISOCODE>.rsc
